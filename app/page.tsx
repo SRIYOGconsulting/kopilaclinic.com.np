@@ -3,21 +3,21 @@ import Image from "next/image";
 import React, { useState } from "react";
 import Link from "next/link";
 import "./globals.css";
-import { ArrowRight, Star, Phone, Clock } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import { FaCheckCircle, FaPhoneAlt, FaWhatsapp, FaClock, FaMapMarkerAlt, FaEnvelope } from "react-icons/fa";
 import FeatureCard from "@/components/ui/FeatureCard";
 import AccordionItem from "@/components/ui/AccordionItem";
-import ServiceCard from "@/components/ServiceCard";
 import Head from "next/head";
 import BlogPostCard from "@/components/BlogPostCard";
 import ClinicSection from "@/components/ui/ClinicSection";
 import { AnimateOnScroll } from "@/components/ui/AnimateOnScroll";
+import ServicesSection from "@/components/ui/services";
 
 
 
 export default function Page() { // Changed to Page for convention
 
-  const [] = useState(false);
+  const [hovered, setHovered] = useState(false);
 
   return (
     <><Head>
@@ -41,7 +41,7 @@ export default function Page() { // Changed to Page for convention
               {/* Left Content */}
               <div className="relative h-full lg:text-left mt-0 md:mt-120 lg:mt-120 p-4 md:p-0">
                 {/* Decorative elements - Using standard Tailwind for basic animation approximation */}
-                <div className="absolute top-8 -left-5 md:top-6 md:-left-10 w-16 h-16 md:w-16 md:h-16 opacity-30"> {/* animate-pulse for approximation */}
+                <div className="absolute -top-2 -left-5 md:-top-20 md:-left-10 w-16 h-16 md:w-16 md:h-16 opacity-10"> {/* animate-pulse for approximation */}
                   <Image src="/icon-star.svg" alt="Star Icon" height={36} width={76} />
                 </div>
 
@@ -81,6 +81,9 @@ export default function Page() { // Changed to Page for convention
 
                       </div>
                       <span className="text-primary text-sm">Based On Public Reviews</span>
+                      <div className="absolute -right-12 bottom-2 w-12 h-12 md:w-12 md:h-12 opacity-10"> {/* animate-pulse for approximation */}
+                  <Image src="/icon-star.svg" alt="Star Icon" height={36} width={76} />
+                </div>
                     </div>
                   </AnimateOnScroll>
                 </div>
@@ -136,7 +139,7 @@ export default function Page() { // Changed to Page for convention
                 {/* Consult A Doctor */}
                 <div className="flex items-center space-x-4">
                   <div className=" bg-opacity-20 rounded-full p-3">
-                    <Phone className="h-8 w-8 text-white" />
+                    <Image src="/icon-cta-phone.svg" alt="Phone Icon" width={24} height={24} className="hidden md:block h-10 w-10" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold">Consult A Doctor</h3>
@@ -147,7 +150,7 @@ export default function Page() { // Changed to Page for convention
                 {/* Opening Hours */}
                 <div className="flex items-center space-x-4">
                   <div className="bg-opacity-20 rounded-full p-3">
-                    <Clock className="h-12 w-12 text-white" />
+                    <Image src="/icon-cta-time.svg" alt="Clock Icon" width={24} height={24} className="hidden md:block h-10 w-10" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold">Opening Hours</h3>
@@ -173,29 +176,49 @@ export default function Page() { // Changed to Page for convention
 
 
         {/* About Section */}
-        <section className="bg-white flex flex-col max-w-7xl mx-auto md:flex-row items-center justify-center gap-4 py-10 lg:mb-50 px-4 sm:px-8 lg:px-4 w-full">
+        <section className="bg-white flex flex-col max-w-7xl mx-auto md:flex-row items-center justify-center gap-4 py-10 lg:mb-30 px-4 sm:px-8 lg:px-4 w-full">
           {/* Left Image Section */}
           <div className="relative flex flex-col justify-center items-center w-full min-h-[320px] sm:min-h-[400px] lg:min-h-[500px]">
             {/* Main Baby Image */}
-            <div className="absolute rounded-auto z-0 left-2 top-4 rounded-3xl overflow-hidden border-4 border-white shadow-lg image-unwrap">
-              <Image
-                src="/baby1.jpg"
-                alt="Baby smiling"
-                height={600}
-                width={360}
-                className="object-cover scale-130  w-[960px] md:w-[320px] lg:w-[380px]"
-              />
-            </div>
-            {/* Second Baby Image */}
-            <div className="absolute z-10 left-44 top-50 sm:left-104 sm:top-90 lg:left-2 lg:top-50  rounded-3xl border-4 border-white shadow-md image-unwrap">
-              <Image
-                src="/baby2.jpg"
-                alt="Happy baby"
-                height={400}
-                width={600}
-                className="object-cover rounded-3xl w-[260px] md:w-[120px] lg:w-[560px]"
-              />
-            </div>
+            {/* Main Baby Image (baby1.jpg) */}
+<div className="absolute z-0 left-2 top-4 rounded-3xl overflow-hidden border-4 border-white group">
+  <Image
+    src="/baby1.jpg"
+    alt="Baby smiling"
+    height={600}
+    width={360}
+    className="image-unwrap object-cover w-[960px] md:w-[320px] lg:w-[380px] transition-transform duration-700 ease-in-out group-hover:scale-110"
+  />
+  {/* White Diagonal Overlay */}
+  <div className="absolute inset-0 z-10 pointer-events-none">
+    <div className="w-[160%] h-[160%] bg-white rotate-[25deg] opacity-0 scale-0 group-hover:scale-100 group-hover:opacity-60 transition-all duration-700 ease-in-out absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+  </div>
+</div>
+
+{/* Second Baby Image (baby2.jpg) */}
+<div
+  className="absolute z-10 left-44 top-45 sm:left-104 sm:top-90 lg:left-2 lg:top-45 rounded-3xl overflow-hidden border-4 border-white group"
+  onMouseEnter={() => setHovered(true)}
+  onMouseLeave={() => setHovered(false)}
+>
+  <Image
+    src="/baby2.jpg"
+    alt="Happy baby"
+    height={400}
+    width={600}
+    className="image-unwrap object-cover rounded-3xl w-[260px] md:w-[120px] lg:w-[560px] transition-transform duration-700 ease-in-out group-hover:scale-110"
+  />
+  {/* White Diagonal Overlay */}
+  {hovered && (
+    <div className="absolute inset-0 z-10 pointer-events-none">
+      <div
+        className="w-[160%] h-[160%] bg-white rotate-[25deg] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        style={{ animation: "overlayExpandFade 0.7s ease-in-out forwards" }}
+      />
+    </div>
+  )}
+</div>
+
             {/* Experience Badge */}
             <div className="absolute top-60 left-24 sm:top-98 sm:left-90 z-20 md:left-90 md:top-10 w-26 h-26 md:w-36 md:h-36 rounded-full ">
               <Image
@@ -208,7 +231,7 @@ export default function Page() { // Changed to Page for convention
             {/* Star Icon */}
             <div className="absolute top-70 left-4 sm:top-120 sm:left-60 lg:left-120 lg:top-10 ">
               <Image src="icon-star.svg" alt="star"
-                height={200} width={200} className="h-12 w-12 lg:opacity-30 " />
+                height={200} width={200} className="h-12 w-12 lg:opacity-10 " />
             </div>
           </div>
 
@@ -242,57 +265,7 @@ export default function Page() { // Changed to Page for convention
         </section>
 
         {/* Services Section */}
-        <section className="bg-[#f0f8ff] py-24 px-6 ">
-          <div className="max-w-7xl mx-auto text-center"><AnimateOnScroll>
-            <p className="text-sm text-secondary font-semibold mb-4 slide-up"><Image src="/icon-star.svg" alt="star" width={18} height={18} className="inline-block" />
-              OUR SERVICES</p> </AnimateOnScroll>
-            <h2 className="text-5xl font-extrabold text-secondary slide-side">
-              Fertility & Gyne <span className="text-primary">Services for You.</span>
-            </h2> <AnimateOnScroll>
-              <p className="text-gray-500 mt-8 slide-up">
-                Dedication of Providing Professional Healthcare Services.
-              </p></AnimateOnScroll>
-
-            <div className="relative z-10 container mx-auto mt-12 text-left">
-              {/* Services Grid */}
-              <AnimateOnScroll>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 justify-items-center slide-up">
-                  <ServiceCard
-                    title="Ovulation Induction"
-                    description="A fertility treatment that uses medications to stimulate the ovaries to produce and release eggs, increasing the chances of conception."
-                    link="/Services"
-                  />
-                  <ServiceCard
-                    title="Intrauterine Insemination (IUI)"
-                    description="A fertility procedure where specially prepared sperm is directly placed into the uterus to enhance the likelihood of fertilization."
-                    link="/Services"
-                  />
-                  <ServiceCard
-                    title="In Vitro Fertilisation (IVF)"
-                    description="A process where eggs and sperm are combined in a laboratory to create embryos, which are then transferred to the uterus for potential pregnancy."
-                    link="/Services"
-                  />
-                  <ServiceCard
-                    title="Antenatal Check Up"
-                    description="Routine medical care provided during pregnancy to monitor the health of the mother and the developing baby."
-                    link="/Services"
-                  />
-                </div>
-              </AnimateOnScroll>
-            </div> <AnimateOnScroll>
-              <p className="mt-12 text-sm text-gray-600 max-w-2xl mx-auto text-base md:text-lg">
-                We believe in using the latest technology and techniques to <br /> ensure the best outcomes for our patients.
-              </p> </AnimateOnScroll>
-            <AnimateOnScroll>
-              <Link href="/Services" passHref>
-                <button className="mx-auto mt-6 px-6 py-3 bg-secondary text-white font-bold rounded-full flex items-center gap-2 bg-gradient-to-r from-pink-400 to-pink-600 bg-[length:0%_100%] bg-left bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_100%]">
-                  View All Services
-                  <span className="text-xl bg-white text-blue-500 rounded-full px-2">↗</span>
-                </button>
-              </Link>
-            </AnimateOnScroll>
-          </div>
-        </section>
+        <ServicesSection />
 
         {/* Visit Us Section */}
         <ClinicSection />
@@ -304,13 +277,13 @@ export default function Page() { // Changed to Page for convention
           <div className="relative z-10 container mx-auto px-0 sm:px-4 lg:px-8 flex flex-col lg:flex-row items-center lg:items-start gap-12 w-full">
             {/* Left Section: Image */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
-              <div className="relative w-full h-screen max-w-xl aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
+              <div className="relative w-full h-160 max-w-xl aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
                 <Image
                   src="/how-it-work-img.jpg"
                   alt="Happy Baby"
                   height={600} width={600}
                   quality={90}
-                  className="rounded-3xl h-screen w-full object-cover"
+                  className="rounded-3xl h-160 w-full object-cover"
                 />
               </div>
             </div>
@@ -355,12 +328,12 @@ export default function Page() { // Changed to Page for convention
 
             {/* Blog Post Grid */}
             <AnimateOnScroll>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 justify-items-center">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-8 justify-items-center">
                 <BlogPostCard
                   imageUrl="/blog1.jpg"
                   title="Understanding Ovulation Induction: A Key To Overcoming Infertility"
                   description="Ovulation induction is an essential treatment for women struggling with infertility due to irregular or absent ovulation."
-                  link="/blog/ovulation-induction"
+                  link="/blog/understanding-ovulation-induction"
                 />
                 <BlogPostCard
                   imageUrl="/blog2.jpg"

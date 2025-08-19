@@ -84,14 +84,14 @@ const Testimonial: React.FC = () => {
 
   return (
     <div className="bg-white flex flex-col items-center justify-center py-12 mx-auto max-w-7xl">
-      <section className="py-16 md:py-24 overflow-hidden">
+      <section className="lg:py-16 md:py-24 overflow-hidden">
         <div className="relative z-10 container mx-auto">
           {/* Section Header */}
           <div className="text-center mb-12"> <AnimateOnScroll>
             <p className="text-secondary font-semibold text-sm tracking-wide uppercase flex items-center justify-center gap-2">
               <Image src="/icon-star.svg" alt="star" width={18} height={18} className="inline-block" /> TESTIMONIALS
             </p> </AnimateOnScroll>
-            <h2 className="text-5xl font-bold text-secondary mt-2">
+            <h2 className="text-2xl lg:text-5xl font-bold text-secondary mt-2">
               Our <span className='text-primary'>Testimonials</span>
             </h2> <AnimateOnScroll>
             <p className="text-gray-600 text-lg mt-4">
@@ -99,7 +99,7 @@ const Testimonial: React.FC = () => {
             </p> </AnimateOnScroll>
           </div>
 
-          <section className="bg-light-gray py-10 md:py-16">
+          <section className="bg-light-gray lg:py-10 md:py-16">
             <div className="flex flex-col md:flex-row overflow-hidden">
               
               <div className="relative w-full md:w-2/5 h-96"> {/* Adjusted width, height, and rounding */}
@@ -111,9 +111,11 @@ const Testimonial: React.FC = () => {
                   className="rounded-4xl"
                 />
                 {/* Rating Box */}
-                <div className="absolute -bottom-10 md:-bottom-8 left-1/2 md:left-auto md:right-0 bg-secondary text-white p-4 pr-8 rounded-4xl shadow-md flex flex-col items-start border-5 border-white"> 
-                 <AnimateOnScroll> <span className="text-4xl font-bold mb-1">4.7/5</span>
-                  <p className="text-sm leading-tight mb-1 text-left">This rate is given by user after visiting our location</p>
+                <div className="absolute w-90 lg:w-90 xl:w-100 -bottom-10 md:-bottom-8 left-4 xl:left-30 lg:left-1/2 bg-secondary text-white p-4 pr-8 rounded-4xl flex flex-col items-start border-5 border-white"> 
+                 <AnimateOnScroll> <div className='flex flex-row gap-4 mb-4'><span className="text-4xl font-bold mb-1">4.7/5</span>
+                  <p className="text-sm leading-tight mb-1 text-left">This rate is given by user <br /> after visiting our location</p>
+                  </div>
+                  <div className='flex flex-row gap-4'>
                   <div className="flex text-yellow-400 text-lg mb-1">
                     {Array.from({ length: 5 }).map((_, i) => (
                       <span key={i} className={`${i < currentTestimonialData.stars ? 'text-yellow-400' : 'text-gray-300'}`}>
@@ -121,7 +123,9 @@ const Testimonial: React.FC = () => {
                       </span>
                     ))}
                   </div>
-                  <p className="text-xs font-bold uppercase">For Excellence Services</p> </AnimateOnScroll>
+                  <p className="text-xs font-bold uppercase">For Excellence Services</p> 
+                  </div>
+                  </AnimateOnScroll>
                 </div>
               </div>
 
@@ -131,7 +135,7 @@ const Testimonial: React.FC = () => {
                 <p className="text-8xl text-gray-300 font-serif -mb-10 -ml-4 transform scale-x-[-1] leading-none">“</p> {/* Added large quote mark */}
 
                 {/* Testimonial Text */} <AnimateOnScroll>
-                <p className="text-primary text-xl font-semibold leading-relaxed mb-6 mt-4">
+                <p className="text-primary text-base xl:text-xl font-semibold leading-relaxed mb-6 mt-4">
                   {currentTestimonialData.text}
                 </p> </AnimateOnScroll>
 

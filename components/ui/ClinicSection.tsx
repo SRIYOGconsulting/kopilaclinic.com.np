@@ -16,8 +16,8 @@ const ClinicSection: React.FC = () => {
 
   return (
     <section
-      className="relative w-full overflow-hidden bg-white mx-auto max-w-7xl py-0
-                 px-4 sm:px-6 md:px-8 lg:px-4 xl:px-0 2xl:px-20"
+      className="relative w-full overflow-hidden bg-white mx-auto max-w-7xl py-0 mt-12
+                 px-2 sm:px-6 md:px-8 lg:px-0 xl:px-0 2xl:px-2"
     >
       <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-full">
         <div
@@ -96,7 +96,7 @@ const ClinicSection: React.FC = () => {
           <p className="text-primary text-lg md:text-xl font-medium font-semibold">Years Of Experience</p>
           <div className="h-px bg-gray-300 my-4"></div>
           <p className="mt-2 text-gray-600 text-base">
-            A decade of excellence in fertility and women&apos;s healthcare.
+            A decade of excellence in fertility and womens healthcare.
           </p>
         </div>
         <div className="flex flex-col px-0 lg:px-4">
