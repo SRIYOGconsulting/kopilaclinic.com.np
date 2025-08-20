@@ -55,7 +55,7 @@ export default function Page() { // Changed to Page for convention
                     antenatal care, and gynecological services.
                   </p>
                   <AnimateOnScroll>
-                    <Link href="/appointment">
+                   <Link href="/appointment">
                       <div className="group">
                         <button className="bg-secondary text-sm relative overflow-hidden text-white px-4 py-3 rounded-full bg-gradient-to-r from-primary to-pink-600 bg-[length:0%_100%] bg-left bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_100%] text-lg flex items-center shadow-lg hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-pink-400 mb-8 mx-auto</button> lg:mx-0">
                           Book An Appointment
@@ -254,12 +254,14 @@ export default function Page() { // Changed to Page for convention
                 <div className="flex items-center slide-up"><FaCheckCircle className="text-secondary text-lg mr-2" />Comprehensive Support</div>
               </div></AnimateOnScroll>
             <AnimateOnScroll>
-              <Link href="/about_Us" passHref>
-                <button className="mt-6 px-6 py-3 bg-secondary text-white font-bold rounded-full flex items-center gap-2 bg-gradient-to-r from-pink-400 to-pink-600 bg-[length:0%_100%] bg-left bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_100%] slide-up">
-                  Read More
-                  <span className="text-xl bg-white text-blue-500 rounded-full px-2">↗</span>
-                </button>
-              </Link>
+              <Link href="/about_Us">
+                      <div className="group">
+                        <button className="bg-secondary text-sm relative overflow-hidden text-white px-4 py-3 rounded-full bg-gradient-to-r from-primary to-pink-600 bg-[length:0%_100%] bg-left bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_100%] text-lg flex items-center shadow-lg hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-pink-400 mb-8 mx-auto</button> lg:mx-0">
+                          Read More
+                          <ArrowRight className="ml-2 h-7 w-7 bg-white text-blue-600 rounded-full p-1 -rotate-60 transform transition-transform duration-300 group-hover:rotate-5" />
+                        </button>
+                      </div>
+                    </Link>
             </AnimateOnScroll>
           </div>
         </section>
@@ -277,7 +279,7 @@ export default function Page() { // Changed to Page for convention
           <div className="relative z-10 container mx-auto px-0 sm:px-4 lg:px-8 flex flex-col lg:flex-row items-center lg:items-start gap-12 w-full">
             {/* Left Section: Image */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
-              <div className="relative w-full h-160 max-w-xl aspect-[4/3] rounded-3xl overflow-hidden shadow-xl">
+              <div className="relative w-full h-160 max-w-xl aspect-[4/3] rounded-3xl overflow-hidden">
                 <Image
                   src="/how-it-work-img.jpg"
                   alt="Happy Baby"
@@ -352,7 +354,7 @@ export default function Page() { // Changed to Page for convention
           <div className="relative z-10 container px-0 sm:px-4 lg:px-8 flex flex-col lg:flex-row items-center lg:items-start gap-12 min-h-full">
             {/* Left Section: Google Map */}
             <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
-              <div className="relative w-full max-w-2xl aspect-[4/3] rounded-lg overflow-hidden shadow-xl border border-gray-200">
+              <div className="relative w-full max-w-2xl aspect-[4/3] rounded-lg overflow-hidden border border-gray-200">
 
                 {/* Changed YouTube placeholder to a generic Google Maps placeholder */}
                 <iframe
@@ -364,7 +366,7 @@ export default function Page() { // Changed to Page for convention
                   referrerPolicy="no-referrer-when-downgrade"
                   className="absolute inset-0 border-0 rounded-2xl"
                 ></iframe>
-                <div className="absolute top-4 left-4 bg-white p-3 rounded-lg shadow-md max-w-[200px] text-sm">
+                <div className="absolute top-4 left-4 bg-white p-3 rounded-lg max-w-[200px] text-sm">
                   <p className="font-semibold text-gray-800">Kopila Fertility & Womens Clinic</p>
                   <p className="text-xs text-gray-600">Jaycess Chowk, Damak, 57217</p>
                   <div className="flex items-center text-xs mt-1">
@@ -416,13 +418,13 @@ export default function Page() { // Changed to Page for convention
 
               <div className="mt-10 flex justify-center lg:justify-start"> <AnimateOnScroll>
                 <Link href="/appointment">
-                  <div className="group">
-                    <button className="bg-secondary text-sm relative overflow-hidden text-white px-4 py-3 rounded-full bg-gradient-to-r from-pink-400 to-pink-600 bg-[length:0%_100%] bg-left bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_100%] text-lg flex items-center shadow-lg hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-pink-400 mb-8 mx-auto lg:mx-0">
-                      Book An Appointment
-                      <ArrowRight className="ml-2 h-7 w-7 bg-white text-blue-600 rounded-full p-1 -rotate-60 transform transition-transform duration-300 group-hover:rotate-5" />
-                    </button>
-                  </div>
-                </Link> </AnimateOnScroll>
+                      <div className="group">
+                        <button className="bg-secondary text-sm relative overflow-hidden text-white px-4 py-3 rounded-full bg-gradient-to-r from-primary to-pink-600 bg-[length:0%_100%] bg-left bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_100%] text-lg flex items-center shadow-lg hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-pink-400 mb-8 mx-auto</button> lg:mx-0">
+                          Book An Appointment
+                          <ArrowRight className="ml-2 h-7 w-7 bg-white text-blue-600 rounded-full p-1 -rotate-60 transform transition-transform duration-300 group-hover:rotate-5" />
+                        </button>
+                      </div>
+                    </Link> </AnimateOnScroll>
               </div>
             </div>
           </div>
@@ -434,15 +436,15 @@ export default function Page() { // Changed to Page for convention
             {/* Phone button */}
             <a
               href="tel:+9779709055065"
-              className="group relative z-10 w-12 h-12 md:w-14 md:h-14 bg-primary rounded-full flex items-center justify-center shadow-lg transition-transform duration-200 hover:scale-110"
+              className="group relative z-10 w-12 h-12 md:w-14 md:h-14 bg-primary rounded-full flex items-center justify-center transition-transform duration-200 hover:scale-110"
             >
               <FaPhoneAlt className="w-6 h-6 md:w-7 md:h-7 text-white transform transition-transform duration-300 group-hover:rotate-[130deg]" />
             </a>
             <a
-              href="https://wa.me/9779709055065" // Correct WhatsApp URL
+              href="https://wa.me/9779709055065"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-12 h-12 md:w-14 md:h-14 bg-secondary rounded-full flex items-center justify-center shadow-lg transition-transform duration-200 hover:scale-110 animate-bounce"
+              className="w-12 h-12 md:w-14 md:h-14 bg-secondary rounded-full flex items-center justify-center transition-transform duration-200 hover:scale-110 animate-bounce"
             >
               <FaWhatsapp className="w-6 h-6 md:w-7 md:h-7 text-white" />
             </a>

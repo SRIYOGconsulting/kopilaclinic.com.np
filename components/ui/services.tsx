@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { AnimateOnScroll } from "./AnimateOnScroll";
 import ServiceCard from "../ServiceCard";
+import { ArrowRight } from "lucide-react";
 
 
 
@@ -49,12 +50,15 @@ const ServicesSection: React.FC = () => (
                 We believe in using the latest technology and techniques to <br /> ensure the best outcomes for our patients.
               </p> </AnimateOnScroll>
             <AnimateOnScroll>
-              <Link href="/Services" passHref>
-                <button className="mx-auto mt-6 px-6 py-3 bg-secondary text-white font-bold rounded-full flex items-center gap-2 bg-gradient-to-r from-pink-400 to-pink-600 bg-[length:0%_100%] bg-left bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_100%]">
-                  View All Services
-                  <span className="text-xl bg-white text-blue-500 rounded-full px-2">↗</span>
-                </button>
-              </Link>
+              <Link href="/Services">
+  <div className="group flex justify-center items-center mt-4">
+    <button className="bg-secondary text-sm relative overflow-hidden text-white px-4 py-3 rounded-full bg-gradient-to-r from-primary to-pink-600 bg-[length:0%_100%] bg-left bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_100%] text-lg flex items-center shadow-lg hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-pink-400 mb-8 mx-auto lg:mx-0">
+      View All Services
+      <ArrowRight className="ml-2 h-7 w-7 bg-white text-blue-600 rounded-full p-1 -rotate-60 transform transition-transform duration-300 group-hover:rotate-5" />
+    </button>
+  </div>
+</Link>
+
             </AnimateOnScroll>
           </div>
         </section>

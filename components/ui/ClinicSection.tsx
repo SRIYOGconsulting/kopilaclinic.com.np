@@ -21,7 +21,7 @@ const ClinicSection: React.FC = () => {
     >
       <div className="relative z-10 flex flex-col items-center justify-center w-full max-w-full">
         <div
-          className="relative w-full max-w-full mx-0 rounded-4xl overflow-hidden shadow-2xl py-12"
+          className="relative w-full max-w-full mx-0 rounded-4xl overflow-hidden py-12"
           style={{
             backgroundImage: 'url(/visitClinic.jpg)', 
             backgroundSize: 'cover',
@@ -44,7 +44,7 @@ const ClinicSection: React.FC = () => {
             </h1> 
             <AnimateOnScroll>
             <button
-            className="flex items-center px-6 py-3 bg-white text-secondary rounded-full text-sm font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+            className="flex items-center px-6 py-3 bg-white text-secondary rounded-full text-sm font-semibold transition-all duration-300 transform hover:scale-105"
             onClick={handleToggle}
             >
             Watch Video <span className='px-2 text-2xl'><FaPlayCircle /></span>
@@ -55,7 +55,7 @@ const ClinicSection: React.FC = () => {
     <div className="relative" style={{ paddingBottom: '56.25%', height: 0 }}>
       {/* Close Icon */}
       <button
-        className="absolute top-2 right-2 z-20 bg-white bg-opacity-80 rounded-full p-2 shadow hover:bg-opacity-100 transition"
+        className="absolute top-2 right-2 z-20 bg-white bg-opacity-80 rounded-full p-2 hover:bg-opacity-100 transition"
         onClick={() => setShowPlayButton(false)}
         aria-label="Close Video"
         type="button"
