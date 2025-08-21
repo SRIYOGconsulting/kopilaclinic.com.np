@@ -30,7 +30,7 @@ export default function Header() {
   }, [isMenuOpen]);
 
   return (
-    <header className="bg-green-50 shadow-md border-b border-gray-300 px-4 lg:px-12 py-8 top-0 z-50"> {/* sticky */}
+    <header className="bg-green-50 border-b border-gray-300 px-4 lg:px-12 py-8 top-0 z-50"> {/* sticky */}
       <nav className="max-w-screen-xl mx-auto flex items-center justify-between relative">
         {/* Logo */} {/* Logo */}
         <Link href="/" className="flex shrink-0">
@@ -59,7 +59,7 @@ export default function Header() {
         <div
           className={`${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
-          } fixed lg:static top-0 left-0 h-full w-4/5 lg:w-auto lg:h-auto lg:translate-x-0 transform transition-transform duration-300 ease-in-out bg-white md:bg-transparent z-40 flex flex-col md:flex-row md:items-center md:space-x-10 px-6 pt-24 pb-6 md:p-0 shadow-lg md:shadow-none`}
+          } fixed lg:static top-0 left-0 h-full w-auto lg:w-auto lg:h-auto lg:translate-x-0 transform transition-transform duration-300 ease-in-out bg-white lg:bg-transparent z-40 flex flex-col lg:flex-row lg:items-center lg:space-x-10 px-6 pt-24 pb-6 lg:p-0`}
         >
           <ul className="flex flex-col lg:flex-row gap-y-6 lg:gap-y-0 lg:gap-x-10 text-sm lg:text-base font-semibold text-primary">
             {NAV_PAGES.map((page) => (
@@ -78,7 +78,7 @@ export default function Header() {
           {/* Appointment Button */}
           <div className="mt-6 lg:mt-0 lg:ml-6">
             <Link href="/appointment" onClick={closeMenu}>
-              <button className="bg-secondary text-white font-semibold px-4 py-3 rounded-full shadow-md hover:scale-105 hover:bg-primary active:scale-95 transition-all text-sm lg:text-sm flex items-center group">
+            <button className="bg-secondary text-white relative overflow-hidden font-semibold px-4 py-3 rounded-full hover:scale-105 bg-gradient-to-r from-primary to-pink-600 bg-[length:0%_100%] bg-left bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_100%] text-lg flex items-center shadow-lg hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-pink-400  active:scale-95 transition-all text-sm lg:text-sm flex items-center group">
                 Book An Appointment
                 <ArrowRight className="ml-2 h-6 w-6 bg-white text-blue-600 rounded-full p-1 -rotate-60 transform transition-transform duration-300 group-hover:rotate-0" />
               </button>
