@@ -29,9 +29,8 @@ export default function Page() { // Changed to Page for convention
       <meta property="og:title" content="Kopila Fertility & Womens Clinic | Damak, Jhapa, Nepal" />
       <meta property="og:type" content="website" />
       <meta property="og:description" content="Kopila Fertility & Womens Clinic in Damak, Jhapa, Nepal, offers expert gynecological care, fertility treatments, and Womens health services with state-of-the-art facilities and compassionate care." />
-      <meta property="og:image" content="https://kopilaclinic.com.np/logo.svg" />
+      <meta property="og:image" content="https://kopilaclinic.com.np/og/images.jpg" />
       <meta property="og:image:alt" content="Kopila Fertility & Womens Clinic logo or clinic image" />
-
     </Head>
       <main className="relative min-h-screen overflow-hidden min-w-full">
         {/* Hero Section */}
@@ -197,7 +196,7 @@ export default function Page() { // Changed to Page for convention
 
 {/* Second Baby Image (baby2.jpg) */}
 <div
-  className="absolute z-10 left-44 top-45 sm:left-104 sm:top-90 lg:left-2 lg:top-45 rounded-3xl overflow-hidden border-4 border-white group"
+  className="absolute z-10 left-44 top-45 sm:left-104 sm:top-90 md:left-2 md:top-45 rounded-3xl overflow-hidden border-4 border-white group"
   onMouseEnter={() => setHovered(true)}
   onMouseLeave={() => setHovered(false)}
 >
@@ -206,7 +205,7 @@ export default function Page() { // Changed to Page for convention
     alt="Happy baby"
     height={400}
     width={600}
-    className="image-unwrap object-cover rounded-3xl w-[260px] md:w-[120px] lg:w-[560px] transition-transform duration-700 ease-in-out group-hover:scale-110"
+    className="image-unwrap object-cover rounded-3xl w-[260px] md:w-[560px] transition-transform duration-700 ease-in-out group-hover:scale-110"
   />
   {/* White Diagonal Overlay */}
   {hovered && (
@@ -220,7 +219,7 @@ export default function Page() { // Changed to Page for convention
 </div>
 
             {/* Experience Badge */}
-            <div className="absolute top-60 left-24 sm:top-98 sm:left-90 z-20 md:left-90 md:top-10 w-26 h-26 md:w-36 md:h-36 rounded-full ">
+            <div className="absolute top-60 left-24 sm:top-98 sm:left-90 z-20 md:left-52 md:top-16 lg:left-90 lg:top-10 w-26 h-26 md:w-36 md:h-36 rounded-full ">
               <Image
                 src="/about-experience-circle.png"
                 alt="Experience Circle"
@@ -254,7 +253,7 @@ export default function Page() { // Changed to Page for convention
                 <div className="flex items-center slide-up"><FaCheckCircle className="text-secondary text-lg mr-2" />Comprehensive Support</div>
               </div></AnimateOnScroll>
             <AnimateOnScroll>
-              <Link href="/about_Us">
+              <Link href="/about">
                       <div className="group">
                         <button className="bg-secondary text-sm relative overflow-hidden text-white px-4 py-3 rounded-full bg-gradient-to-r from-primary to-pink-600 bg-[length:0%_100%] bg-left bg-no-repeat transition-[background-size] duration-500 hover:bg-[length:100%_100%] text-lg flex items-center shadow-lg hover:scale-105 active:scale-95 focus:outline-none focus:ring-2 focus:ring-pink-400 mb-8 mx-auto</button> lg:mx-0">
                           Read More
