@@ -29,7 +29,7 @@ export default function Page() { // Changed to Page for convention
       <meta property="og:title" content="Kopila Fertility & Womens Clinic | Damak, Jhapa, Nepal" />
       <meta property="og:type" content="website" />
       <meta property="og:description" content="Kopila Fertility & Womens Clinic in Damak, Jhapa, Nepal, offers expert gynecological care, fertility treatments, and Womens health services with state-of-the-art facilities and compassionate care." />
-      <meta property="og:image" content="https://kopilaclinic.com.np/images/og.jpg" />
+      <meta property="og:image" content="https://kopilaclinic.com.np/logo.svg" />
       <meta property="og:image:alt" content="Kopila Fertility & Womens Clinic logo or clinic image" />
 
     </Head>
