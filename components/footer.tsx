@@ -18,7 +18,7 @@ const socialLinks = [
   return (
 
     <footer className="bg-primary text-white backdrop-blur-sm py-10">
-            <div className="container mx-auto px-4 py-12">
+            <div className="container mx-auto px-4 py-12 max-w-7xl mx-auto">
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-2">
                 <div className="space-y-4">
                   <Image src="/icon-star.svg" alt="icon-star" height={16} width={16}
