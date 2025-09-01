@@ -26,6 +26,16 @@ const teamMembers = [
     title: "Nurse",
     image: "/team/team4.png",
   },
+   {
+    name: "Sabita Rai",
+    title: "Lab Technician",
+    image: "/team/sabita.png",
+  },
+   {
+    name: "Dr. Nikesh Bista",
+    title: "Radiologist",
+    image: "/team/Nikesh.png",
+  },
 ];
 
 const Team = () => {
@@ -88,10 +98,10 @@ const Team = () => {
 
         {/* Team Members Section */}
         <div
-          className="max-w-12xl mx-auto py-20"
+          className="max-w-7xl mx-auto py-20"
           ref={teamSectionRef}
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
             {teamMembers.map((member, idx) => (
               <div key={idx} className="text-center">
                 <div className="w-64 h-64 mx-auto rounded-full overflow-hidden">
